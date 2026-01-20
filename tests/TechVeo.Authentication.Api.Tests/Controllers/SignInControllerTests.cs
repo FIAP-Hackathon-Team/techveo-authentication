@@ -1,5 +1,4 @@
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using TechVeo.Authentication.Controllers;
 using TechVeo.Authentication.Application.Commands.SignIn;
 using TechVeo.Authentication.Application.Dto;

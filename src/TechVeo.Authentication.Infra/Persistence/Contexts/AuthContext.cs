@@ -3,12 +3,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TechVeo.Authentication.Domain.Entities;
+using TechVeo.Shared.Infra.Extensions;
 using TechVeo.Shared.Infra.Persistence.Contexts;
 
 namespace TechVeo.Authentication.Infra.Persistence.Contexts;
 
-public class AuthContext(DbContextOptions<AuthContext> options) : TechVeoContext(options)
+public class AuthContext(IOptions<InfraOptions> infraOptions, DbContextOptions<AuthContext> options) : TechVeoContext(infraOptions, options)
 {
     public DbSet<User> Users { get; set; } = null!;
 

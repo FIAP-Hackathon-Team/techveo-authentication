@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TechVeo.Authentication.Domain.Entities;
 using TechVeo.Authentication.Infra.Persistence.Contexts;
-
+using TechVeo.Shared.Infra.Extensions;
 
 Console.WriteLine("=== TechVeo Service Client Manager ===\n");
 
@@ -12,11 +13,14 @@ var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false)
     .Build();
 
+// IOptions of InfraOptions is not needed for in-memory tests
+var infraOptions = Options.Create(new InfraOptions());
+
 var options = new DbContextOptionsBuilder<AuthContext>()
     .UseSqlServer(configuration.GetConnectionString("DataBaseConection"))
     .Options;
 
-using var context = new AuthContext(options);
+using var context = new AuthContext(infraOptions, options);
 
 var exit = false;
 
