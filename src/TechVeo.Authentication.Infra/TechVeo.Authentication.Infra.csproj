@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="TechVeo.Shared.Infra" Version="0.2.4-rc" />
+    <!--<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.3" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TechVeo.Authentication.Application.Tests" />
+    <InternalsVisibleTo Include="TechVeo.Authentication.Integration.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TechVeo.Authentication.Application\TechVeo.Authentication.Application.csproj" />
+    <ProjectReference Include="..\TechVeo.Authentication.Domain\TechVeo.Authentication.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>
