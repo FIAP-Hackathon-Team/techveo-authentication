@@ -72,46 +72,24 @@ namespace TechVeo.Authentication.Infra.Migrations
                         new
                         {
                             Id = new Guid("a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d"),
-                            ClientId = "order-service",
+                            ClientId = "management-service",
                             ClientSecretHash = "AQAAAAIAAYagAAAAEGc5qkWBdWL8/9BHGSyC24vz49eu41YPzSg0AaUFWNzA/qJgKZQy0dK+BiUDwo45qw==",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsActive = true,
                             IsDeleted = false,
-                            Name = "Order Service",
-                            Scopes = "orders.read,orders.write,users.read,products.read,categories.read"
+                            Name = "Management Service",
+                            Scopes = "videos.read,videos.write,users.read"
                         },
                         new
                         {
                             Id = new Guid("b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e"),
-                            ClientId = "payment-service",
+                            ClientId = "processing-service",
                             ClientSecretHash = "AQAAAAIAAYagAAAAEJ1h6kwzl70PTafDv/XTtOK0OD5fgj+7ushepfeOcmT2fagJajeYNh0jeQSo7YYIlQ==",
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             IsActive = true,
                             IsDeleted = false,
-                            Name = "Payment Service",
-                            Scopes = "payments.read,payments.write,orders.read,users.read"
-                        },
-                        new
-                        {
-                            Id = new Guid("c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f"),
-                            ClientId = "kitchen-service",
-                            ClientSecretHash = "AQAAAAIAAYagAAAAENxQDaPMNdL7YhDY9bM7SSs1lWJM0EJfdbqvLBUT0w/Lec7RhsmE4bWUbtojlDbJLA==",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            IsActive = true,
-                            IsDeleted = false,
-                            Name = "Kitchen Service",
-                            Scopes = "kitchen.read,kitchen.write,orders.read,users.read"
-                        },
-                        new
-                        {
-                            Id = new Guid("d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a"),
-                            ClientId = "backoffice-service",
-                            ClientSecretHash = "AQAAAAIAAYagAAAAEJlLak1GYPXjel9Lc9LhwpLilkyUvFhwBuxNL0g8sn6POZv3fD+XqHN0C90pJbE9vg==",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            IsActive = true,
-                            IsDeleted = false,
-                            Name = "Backoffice",
-                            Scopes = "orders.read,orders.write,payments.read,payments.write,users.read,users.write,products.read,products.write,categories.read,categories.write,kitchen.read,kitchen.write"
+                            Name = "Processing Service",
+                            Scopes = "users.read"
                         });
                 });
 
