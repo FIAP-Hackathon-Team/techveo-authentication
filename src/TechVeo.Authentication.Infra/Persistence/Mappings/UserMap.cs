@@ -9,7 +9,7 @@ public class UserMap : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("User");
+        builder.ToTable("Users");
 
         builder.OwnsOne(u => u.Name, name => name.MapName())
             .Navigation(u => u.Name)

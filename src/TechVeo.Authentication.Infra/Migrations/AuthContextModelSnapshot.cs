@@ -117,7 +117,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -145,7 +145,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("User");
+                            b1.ToTable("Users");
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
@@ -171,7 +171,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("User");
+                            b1.ToTable("Users");
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");

@@ -33,7 +33,7 @@ namespace TechVeo.Authentication.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -46,7 +46,7 @@ namespace TechVeo.Authentication.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
@@ -59,7 +59,7 @@ namespace TechVeo.Authentication.Infra.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "User",
+                table: "Users",
                 columns: new[] { "Id", "IsDeleted", "PasswordHash", "Role", "Username", "EmailAddress", "NameFullName" },
                 values: new object[] { new Guid("fa09f3a0-f22d-40a8-9cca-0c64e5ed50e4"), false, "AQAAAAIAAYagAAAAEKs0I0Zk5QKKieJTm20PwvTmpkSfnp5BhSl5E35ny8DqffCJA+CiDRnnKRCeOx8+mg==", "admin", "john.admin", "john.admin@techveo.com", "John Admin" });
 
@@ -77,7 +77,7 @@ namespace TechVeo.Authentication.Infra.Migrations
                 name: "ServiceClients");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Users");
         }
     }
 }
