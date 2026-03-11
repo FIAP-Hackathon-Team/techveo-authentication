@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TechVeo.Authentication.Application.Commands.ClientCredentials;
 using TechVeo.Authentication.Contracts.Authentication;
 
-namespace TechVeo.Authentication.Controllers;
+namespace TechVeo.Authentication.Api.Controllers;
 
 [ApiController]
 [Route("v1/[controller]")]
