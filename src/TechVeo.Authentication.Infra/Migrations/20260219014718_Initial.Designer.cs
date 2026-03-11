@@ -12,7 +12,7 @@ using TechVeo.Authentication.Infra.Persistence.Contexts;
 namespace TechVeo.Authentication.Infra.Migrations
 {
     [DbContext(typeof(AuthContext))]
-    [Migration("20260121011013_Initial")]
+    [Migration("20260219014718_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -120,7 +120,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -148,7 +148,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("User");
+                            b1.ToTable("Users");
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
@@ -174,7 +174,7 @@ namespace TechVeo.Authentication.Infra.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("User");
+                            b1.ToTable("Users");
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");

@@ -14,8 +14,14 @@ namespace TechVeo.Authentication.Infra.Persistence.Repositories
         public async Task<Guid> AddAsync(User user)
         {
             var entry = await _dbContext.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
 
             return entry.Entity.Id;
+        }
+
+        public async Task<User?> GetByIdAsync(Guid id)
+        {
+            return await _dbContext.Users.FindAsync(id);
         }
 
         public async Task<User?> GetByUsernameOrEmailAsync(string username)

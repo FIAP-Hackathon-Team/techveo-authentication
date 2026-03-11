@@ -1,5 +1,5 @@
 using MediatR;
-using TechVeo.Authentication.Controllers;
+using TechVeo.Authentication.Api.Controllers;
 using TechVeo.Authentication.Application.Commands.SignIn;
 using TechVeo.Authentication.Application.Dto;
 using TechVeo.Authentication.Contracts.Authentication;

@@ -9,6 +9,7 @@ using TechVeo.Authentication.Domain.ValueObjects;
 using TechVeo.Authentication.Infra.Persistence.Contexts;
 using TechVeo.Shared.Domain.UoW;
 using TechVeo.Shared.Infra.Persistence.UoW;
+using TechVeo.Shared.Infra.Extensions;
 
 namespace TechVeo.Authentication.Integration.Tests.Fixtures;
 
@@ -38,6 +39,10 @@ public class IntegrationTestFixture : IDisposable
             }!)
             .Build();
         services.AddSingleton<IConfiguration>(configuration);
+
+        // Ensure InfraOptions is available for AuthContext which depends on IOptions<InfraOptions>
+        services.AddOptions();
+        services.Configure<InfraOptions>(configuration);
 
         // Register application services
         services.AddMediatR(typeof(Application.Commands.SignIn.SignInCommand).Assembly);
